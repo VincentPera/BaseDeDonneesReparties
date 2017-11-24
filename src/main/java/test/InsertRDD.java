@@ -81,7 +81,11 @@ JavaRDD<Url> urlsRDD = spark.read()
         // |-- name: string (nullable = true)
 
         // Select only the "name" column
-        //df.select("name").show();
+        df.select("monster").show();
+
+
+        JavaRDD<Row> rdd = df.javaRDD();
+        System.out.println("test : "+rdd.toString());
         // +-------+
         // |   name|
         // +-------+
